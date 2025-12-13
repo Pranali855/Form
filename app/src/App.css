@@ -1,0 +1,26 @@
+.img-next-quation{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.text-question{
+  font-size: 22px;
+}
+.heading{
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+.option-cart{
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.option-cart:hover{
+  background-color: #7f7e7e;
+}
