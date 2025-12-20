@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./src/App.css";
-import questions from "./src/data.jsx";
+import "./App.css";
+import questions from "./data.js";
 import { ArrowRight } from "react-feather";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
       <h1 className="heading">Quize App</h1>
-
+      
       <p className="text-question">Questions: {quationindex + 1}</p>
 
       <p className="text-question">{currentQuation.question}</p>
