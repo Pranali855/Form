@@ -1,26 +1,53 @@
-.img-next-quation{
+/* Page background */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Heading */
+.heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Question text */
+.text-question {
+  font-size: 22px;
+  color: #f9fafb;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Option card */
+.option-cart {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 12px 0;
+  cursor: pointer;
+  font-size: 16px;
+  color: #111827;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.option-cart:hover {
+  background-color: #c7d2fe;
+  transform: translateY(-2px);
+}
+.img-next-quation {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 50px;
   height: 50px;
-  cursor: pointer;
-}
-.text-question{
-  font-size: 22px;
-}
-.heading{
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-}
-.option-cart{
-  border: 1px solid #000;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 50%;
   padding: 10px;
-  margin: 10px 0;
   cursor: pointer;
-}
-.option-cart:hover{
-  background-color: #7f7e7e;
+  transition: all 0.3s ease;
 }
