@@ -24,6 +24,7 @@ export default function RegistrationForm() {
   return (
     <div className="container">
       <h2>Registration Form</h2>
+        <p>{formData.city} is a Beautiful place ❤️ </p>
 
       <form onSubmit={handleSubmit} className="form-box">
         <input
@@ -63,7 +64,6 @@ export default function RegistrationForm() {
           <option value="Chennai">Chennai</option>
         </select>
 
-        <p>{formData.city} is a Beautiful place ❤️ </p>
 
         <button type="submit">Register</button>
       </form>
