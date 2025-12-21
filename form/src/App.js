@@ -1,5 +1,5 @@
 import React from "react";
-import RegistrationForm from "./assets/RegistractionForm.jsx";
+import RegistrationForm from "./RegistractionForm.jsx";
 import "./App.css";
 export default function App (){
   return(
