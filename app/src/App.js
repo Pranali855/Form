@@ -1,71 +1,67 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import questions from "./data.js";
-import { ArrowRight } from "react-feather";
-import { Toaster, toast } from "react-hot-toast";
+import questions from "./data";
+import { ArrowRight } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
-  const startIndex = 0;
-  const endIndex = questions.length - 1;
-  const randomIndex =
-    Math.floor(Math.random() * (endIndex - startIndex + 1)) + startIndex;
-
-  const [quationindex, setQuationindex] = useState(0);
-
-  const [optionstyle, setOptionstyle] = useState({
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [optionStyles, setOptionStyles] = useState({
     0: {},
     1: {},
     2: {},
     3: {},
   });
 
-  const currentQuation = questions[quationindex];
+  const currentQuestion = questions[questionIndex];
 
   const checkAnswer = (selectedOption, idx) => {
-    if (currentQuation.answer === selectedOption) {
-      toast.success("Correct Answer");
-      setOptionstyle({
-        ...optionstyle,
+    if (currentQuestion.answer === selectedOption) {
+      toast.success("Correct Answer!");
+      setOptionStyles({
+        ...optionStyles,
         [idx]: { backgroundColor: "lightgreen" },
       });
     } else {
       toast.error(
-        "Wrong Answer! The correct answer is: " + currentQuation.answer
+        "Wrong Answer! the correct Answer is :" + currentQuestion.answer
       );
-      setOptionstyle({
-        ...optionstyle,
-        [idx]: { backgroundColor: "red" },
+      setOptionStyles({
+        ...optionStyles,
+        [idx]: { backgroundColor: "lightcoral" },
       });
     }
   };
 
   return (
     <div>
-      <h1 className="heading">Quize App</h1>
-      
-      <p className="text-question">Questions: {quationindex + 1}</p>
+      <h1 className="heading">Quiz App</h1>
 
-      <p className="text-question">{currentQuation.question}</p>
-
-      {currentQuation.options.map((option, idx) => {
-        return (
-          <div
-            key={idx}
-            className="option-cart"
-            style={optionstyle[idx]}
-            onClick={() => checkAnswer(option, idx)}
-          >
-            {option}
-          </div>
-        );
-      })}
+      <div className="container">
+        <p className="text-question">Questions : {questionIndex + 1}</p>
+        <p className="txt-question">{currentQuestion.question}</p>
+        {currentQuestion.options.map((option, idx) => {
+          return (
+            <div
+              key={idx}
+              className="que-option"
+              onClick={() => {
+                checkAnswer(option, idx);
+              }}
+              style={optionStyles[idx]}
+            >
+              {option}
+            </div>
+          );
+        })}
+      </div>
 
       <ArrowRight
-        className="img-next-quation"
+        className="img-next"
         onClick={() => {
-          if (quationindex < questions.length - 1) {
-            setQuationindex(quationindex + 1);
-            setOptionstyle({
+          if (questionIndex < questions.length - 1) {
+            setQuestionIndex(questionIndex + 1);
+            setOptionStyles({
               0: {},
               1: {},
               2: {},
@@ -73,7 +69,6 @@ function App() {
             });
           }
         }}
-        style={{ cursor: "pointer", color: "blue" }}
       />
 
       <Toaster />
