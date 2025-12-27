@@ -1,53 +1,81 @@
-/* Page background */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
   min-height: 100vh;
-  padding: 20px;
+  background: linear-gradient(135deg, #FFB347, #FFCC33)
+;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Heading */
 .heading {
-  font-size: 28px;
-  font-weight: bold;
   text-align: center;
-  color: #ffffff;
-  margin-bottom: 15px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
 }
 
-/* Question text */
+.container {
+  background: #fce3e3;
+  width: 420px;
+  padding: 25px 30px;
+  border: 3px solid #8B0000;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
 .text-question {
-  font-size: 22px;
-  color: #f9fafb;
-  margin-bottom: 15px;
-  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-/* Option card */
-.option-cart {
-  background-color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 12px 0;
+.txt-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.que-option {
+  background: #f4f6fb;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 16px;
-  color: #111827;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
 }
-.option-cart:hover {
-  background-color: #c7d2fe;
-  transform: translateY(-2px);
+
+.que-option:hover {
+  background: #e1e5ff;
+  transform: translateX(4px);
 }
-.img-next-quation {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+.img-next {
+  display: block;
+  margin: 25px auto 0;
+  width: 45px;
+  height: 45px;
+  color: #ffffff;
+  background: #4f46e5;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.img-next:hover {
+  background: #4338ca;
+  transform: scale(1.1);
+}
+
+.react-hot-toast {
+  font-size: 0.9rem;
 }
