@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import "./App.css";
-import questions from "./data";
+import questions from './data';
 import { ArrowRight } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -24,7 +24,7 @@ function App() {
       });
     } else {
       toast.error(
-        "Wrong Answer! the correct Answer is :" + currentQuestion.answer
+        "Wrong Answer! the correct Answer is : " + currentQuestion.answer
       );
       setOptionStyles({
         ...optionStyles,
@@ -35,29 +35,26 @@ function App() {
 
   return (
     <div>
-      <h1 className="heading">Quiz App</h1>
+      <h1 className='heading'>Quiz App</h1>
 
-      <div className="container">
-        <p className="text-question">Questions : {questionIndex + 1}</p>
-        <p className="txt-question">{currentQuestion.question}</p>
-        {currentQuestion.options.map((option, idx) => {
-          return (
-            <div
-              key={idx}
-              className="que-option"
-              onClick={() => {
-                checkAnswer(option, idx);
-              }}
-              style={optionStyles[idx]}
-            >
-              {option}
-            </div>
-          );
-        })}
+      <div className='container'>
+        <p className='text-question'>Questions : {questionIndex + 1}</p>
+        <p className='txt-question'>{currentQuestion.question}</p>
+
+        {currentQuestion.options.map((option, idx) => (
+          <div
+            key={idx}
+            className='que-option'
+            onClick={() => checkAnswer(option, idx)}
+            style={optionStyles[idx]}
+          >
+            {option}
+          </div>
+        ))}
       </div>
 
       <ArrowRight
-        className="img-next"
+        className='img-next'
         onClick={() => {
           if (questionIndex < questions.length - 1) {
             setQuestionIndex(questionIndex + 1);
